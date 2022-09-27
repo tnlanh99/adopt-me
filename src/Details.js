@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import ThemeContext from "./ThemeContext";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 
@@ -30,7 +31,9 @@ class Details extends React.Component {
           <h2>
             {animal} - {breed} - {city}, {state}
           </h2>
-          <button>Adopt {name}</button>
+          <button style={{ backgroundColor: this.props.themeColor }}>
+            Adopt {name}
+          </button>
           <p>{description}</p>
         </div>
       </div>
@@ -39,10 +42,11 @@ class Details extends React.Component {
 }
 
 const WrapperDetails = () => {
+  const [themeColor] = useContext(ThemeContext);
   const params = useParams();
   return (
     <ErrorBoundary>
-      <Details params={params} />
+      <Details themeColor={themeColor} params={params} />
     </ErrorBoundary>
   );
 };
