@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import SearchParams from "./SearchParams";
 
 const App = () => {
@@ -10,6 +9,4 @@ const App = () => {
   );
 };
 
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(rootElement);
-root.render(<App />);
+export default App;
