@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Carousel from "./Carousel";
 
 class Details extends React.Component {
   state = { loading: true };
@@ -17,11 +18,13 @@ class Details extends React.Component {
       return <h2>Loading...</h2>;
     }
 
-    const { name, animal, breed, city, state, description } = this.state;
+    const { name, animal, breed, city, state, description, images } =
+      this.state;
 
     return (
       <div className="details">
         <div>
+          <Carousel images={images} />
           <h1>{name}</h1>
           <h2>
             {animal} - {breed} - {city}, {state}
