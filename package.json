@@ -2,8 +2,10 @@
   "name": "adopt-me",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
+    "dev": "parcel",
+    "build": "parcel build",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,html,css,json,md}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,html,css,json,md}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\""
@@ -11,9 +13,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1"
+    "parcel": "^2.7.0",
+    "prettier": "^2.7.1",
+    "process": "^0.11.10"
   }
 }
